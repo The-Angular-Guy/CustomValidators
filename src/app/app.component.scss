@@ -1,0 +1,106 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+
+  form {
+    padding: 2rem 2rem;
+    width: 400px;
+    height: 530px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 5px rgba(186, 186, 186, 0.7);
+
+    .control-container {
+      margin-bottom: 40px;
+
+      .input-container {
+        position: relative;
+
+        input {
+          width: 100%;
+          position: relative;
+          box-shadow: none;
+          border: none;
+          border-bottom: 1px solid #cfd5e0;
+          border-radius: 0;
+          color: #002863;
+          caret-color: #006deb;
+          outline: none;
+
+          &[type="number"] {
+            -moz-appearance: textfield;
+          }
+
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+          }
+
+          &:disabled {
+            background-color: white;
+            opacity: 0.5;
+            pointer-events: none;
+          }
+
+          &:focus {
+            border-bottom: 1px solid #006deb;
+          }
+
+          &:not(:focus).ng-touched.ng-invalid.ng-dirty {
+            border-bottom: 1px solid #ff003c;
+          }
+
+          &:not(:focus).ng-touched.ng-invalid.ng-dirty ~ label {
+            color: #ff003c;
+          }
+
+          &:not(:focus).ng-touched.ng-invalid.ng-dirty ~ .error-icon,
+          &:not(:focus).ng-touched.ng-invalid.ng-dirty ~ .error-label {
+            display: block;
+          }
+
+          &:focus ~ label,
+          &:not(:placeholder-shown) ~ label {
+            top: -10px;
+            left: 0;
+            color: #006deb;
+          }
+        }
+
+        label {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          color: #969696;
+          pointer-events: none;
+          transform: translateY(-50%);
+          transition: 0.2s ease all;
+          -moz-transition: 0.2s ease all;
+          -webkit-transition: 0.2s ease all;
+        }
+      }
+    }
+
+    .submit-button-container {
+      text-align: center;
+
+      .submit-btn {
+        background-color: #006deb;
+        color: white;
+        width: 200px;
+        height: 48px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-out;
+
+        &:hover {
+          background-color: #00499c;
+        }
+      }
+    }
+  }
+}

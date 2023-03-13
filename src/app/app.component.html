@@ -1,0 +1,36 @@
+<form [formGroup]="form" (ngSubmit)="onFormSubmit()">
+  <!-- User Name -->
+  <div class="control-container">
+    <div class="input-container">
+      <input
+        id="username"
+        type="text"
+        formControlName="username"
+        placeholder=" "
+      />
+      <label class="f-14 p-0" for="username">Username</label>
+    </div>
+    <p><b>Validation Result:</b> {{ form.get("username")?.status }}</p>
+    <div>
+      <b>Validation Errors:</b>
+      <pre>{{ form.get("username")?.errors | json }}</pre>
+    </div>
+  </div>
+
+  <!-- Password -->
+  <div class="control-container">
+    <div class="input-container">
+      <input id="password" formControlName="password" placeholder=" " />
+      <label class="f-14 p-0" for="password">Password</label>
+    </div>
+    <p><b>Validation Result:</b> {{ form.get("password")?.status }}</p>
+    <div>
+      <b>Validation Errors:</b>
+      <pre>{{ form.get("password")?.errors | json }}</pre>
+    </div>
+  </div>
+
+  <div class="submit-button-container">
+    <button class="btn submit-btn" type="submit">Submit Form</button>
+  </div>
+</form>
